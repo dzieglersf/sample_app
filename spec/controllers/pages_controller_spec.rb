@@ -10,7 +10,7 @@ describe PagesController do
 
     it "should have the right title" do
       visit 'help'
-      page.should have_selector("help",
+      page.should have_selector("title",
         :content => "Ruby on Rails Tutorial Sample App | Help")
     end
 
