@@ -6,59 +6,38 @@ describe "Pages" do
     @base_title = "Ruby on Rails Tutorial Sample App"
   end
 
+  subject { page }
+
   describe "Home page" do
-    
-    it "shoud have the h1 'Sample App'" do
-      visit '/pages/home'
-      page.should have_selector('h1', :text => 'Sample App')
-    end
-    
-    it "should have the correct title" do	
-    	visit '/pages/home'
-    	page.should have_selector('title', :text => @base_title + " | Home")
-    end
+    before { visit root_path }
+
+    it { should have_selector 'h1', :text => 'Sample App' }
+    it { should have_selector 'title', :text => @base_title + " | Home" }
 
   end
 
   describe "Help page" do
+    before { visit help_path }
 
-   	it "should have the h1 'Help'" do
-   		visit '/pages/help'
-   		page.should have_selector('h1', :text => "Help")
-    end
-
-    it "should have the correct title" do
-      visit '/pages/help'
-      page.should have_selector('title', :text => @base_title + " | Help")
-    end
+    it { should have_selector 'h1', :text => 'Help' }
+    it { should have_selector 'title', :text => @base_title + " | Help" }
 
   end
 
   describe "Contact Page" do
+    before { visit contact_path }
 
-    it "should have the h1 'Contact'" do
-      visit '/pages/contact'
-      page.should have_selector('h1', :text => "Contact Us")
-    end
-
-    it "should have the correct title" do
-      visit '/pages/contact'
-      page.should have_selector('title', :text => @base_title + " | Contact")
-    end
+    it { should have_selector 'h1', :text => "Contact Us" }
+    it { should have_selector 'title', text: @base_title + " | Contact" }
 
   end
 
   describe "About Page" do
+    before { visit about_path }
 
-    it "should have the h1 'About'" do
-      visit '/pages/about'
-    end
-
-    it "should have the correct title" do
-      visit '/pages/about'
-      page.should have_selector('title', :text => @base_title + " | About")
-    end
-
+    it { should have_selector 'h1', text: "About" }
+    it { should have_selector 'title', text: @base_title + " | About" }
+    
   end
 
 end
