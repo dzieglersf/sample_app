@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.3'
 gem 'bootstrap-sass', '2.0.0' 	
+gem 'bcrypt-ruby', '3.0.1'
 gem 'jquery-rails', '2.0.0'
 
 # gem 'gravatar_image_tag'
@@ -10,6 +11,7 @@ gem 'jquery-rails', '2.0.0'
 group :development do
 	gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.9.0'
+  gem 'annotate', '~>2.4.1.beta'
 	gem 'guard-rspec', '0.5.5'
 	gem 'growl'
 # gem 'faker'
