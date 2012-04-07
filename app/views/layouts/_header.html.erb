@@ -8,6 +8,7 @@
 					<li><%= link_to "Help", help_path %></li>
 				<% if signed_in? %>
 					<li><%= link_to "Users", '#' %></li>
+				
 					<li id="fat-menu" class="drowdown">
 						<a href="#" class="dropdown-toggle" data-toggle="dropdown">Account<b class="caret"></b></a>
 						<ul class="dropdown-menu">
@@ -17,6 +18,7 @@
 							<li><%= link_to "Sign out", signout_path, method: "delete" %></li>
 						</ul>
 					</li>
+
 				<% else %>
 					<li><%= link_to "Sign in", signin_path %></li>
 				<% end %>
